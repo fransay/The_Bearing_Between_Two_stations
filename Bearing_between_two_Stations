@@ -1,0 +1,32 @@
+
+#The bearing between two stations on ground 
+#A and B are the two stations 
+import math
+Northings_of_A = float(input("Please enter the northing value of A :"))
+
+Eastings_of_A = float(input("Please enter the easting  value of A :"))
+
+Northings_of_B = float(input("Please enter the northing value of B :"))
+
+Eastings_of_B = float(input("Please enter the easting  value of B :"))
+
+Change_in_northings = Northings_of_B - Northings_of_A
+
+Change_in_eastings = Eastings_of_B - Eastings_of_A
+
+Bearing_from_A_to_B = math.atan(Change_in_northings/Change_in_eastings)
+if Bearing_from_A_to_B < 0:
+    print("The Bearing form A to B is :",Bearing_from_A_to_B + 360)
+else:
+    print("The Bearing form A to B is :",Bearing_from_A_to_B)
+
+
+# For the Bearing B to A, also known as the Back Bearing of A to B
+if Bearing_from_A_to_B > 180:
+    Nv = Bearing_from_A_to_B -180
+else:
+    Nv = Bearing_from_A_to_B +180
+if Nv > 360:
+    print ("The Bearing  from B to A is : ",Nv - 360)
+else:
+    print("The Bearing  from B to A is : ",Nv)
