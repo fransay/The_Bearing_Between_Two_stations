@@ -1,0 +1,45 @@
+using System;
+  
+namespace IntroductionToProgramming
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Finding the forward Bearing between 2 points 
+
+            Console.Write("Eastings of station A = ");
+            double eastingsOfStationA = double.Parse(Console.ReadLine());
+
+            Console.Write("Eastings of station B = ");
+            double eastingsOfStationB = double.Parse(Console.ReadLine());
+
+            Console.Write("Northings of station A = ");
+            double northingsOfStationA = double.Parse(Console.ReadLine());
+
+            Console.Write("Northings of station B = ");
+            double northingsOfStationB = double.Parse(Console.ReadLine());
+
+            //  finding for the change in coordinates
+
+            double changeInEastings = (eastingsOfStationB - eastingsOfStationA);
+            double changeInNorthings = (northingsOfStationB - northingsOfStationA);
+
+             //Forward Bearing
+            double forwardbearingbetweentwostations = Math.Atan(changeInEastings / changeInNorthings);
+            Console.WriteLine("The bearing between the two stations ={0}", forwardbearingbetweentwostations);
+
+            // Back bearing 
+            if (forwardbearingbetweentwostations < 180)
+            {
+                Console.WriteLine("The backbearing is = {0}", forwardbearingbetweentwostations + 180);
+            }
+            else if (forwardbearingbetweentwostations > 180)
+            {
+                Console.WriteLine("The backbearing is = {0}", forwardbearingbetweentwostations - 180);
+            }
+            Console.ReadLine();  
+        }
+    }
+}    
+ 
